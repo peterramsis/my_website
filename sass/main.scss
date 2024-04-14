@@ -1,0 +1,107 @@
+@import "_varibale";
+@import "_mixins";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.text-red{
+    color:red;
+}
+.is-show{
+   right: 0;
+}
+body{
+    background-color: $main-color;
+     font-family: "Roboto", sans-serif;
+     overflow-x: hidden;
+     height: 1000px;
+}
+
+header{
+     position: relative;
+     margin: 30px 0 0;
+    .logo{
+        img{
+            width: 4rem;
+        }
+    }
+    .nav{
+        
+         input[type="checkbox"]{
+                display: none;
+            }
+         .btn-menu{
+            position: absolute;
+            right: 0px;
+            color: #fff;
+            top: 1px;
+            display: none;
+         }
+        ul{
+            @include listStyleNone();
+            @include flexAlignItemsCenter();
+            
+
+            gap: 15px;
+            a{
+                position: relative;
+                text-decoration: none;
+                color:$white;
+              
+                
+
+                &:hover{
+                    &::after{
+                    width: 100%;
+                }
+                }
+                &::after{
+                    content: " ";
+                    width: 0%;
+                    height: 2px;
+                    position: absolute;
+                    background-color: #fafa05;
+                    top: 28px;
+                    bottom: 0;
+                    left: 0;
+                    @include transition(all 0.5s ease-in-out);
+                }
+
+                &.active{
+                    &::after{
+                        width: 100%;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) 
+{
+    body{
+        
+    }
+    nav{
+        position: relative;
+        .btn-menu{
+            display: block !important;
+        }
+        ul{
+            @include transition(all .5s ease-in-out);
+            z-index: 9999;
+            margin-top: 60px;
+            position: absolute;
+            right: -470px;
+            width: 211px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #060814;
+            padding: 10px 20px;
+            @include borderRadius(10px);
+        }
+    }    
+}

@@ -1,0 +1,28 @@
+@mixin text-center(){
+    text-align:center;
+}
+
+@mixin transition($x){
+    transition: $x;
+    -webkit-transition: $x;
+    -moz-transition: $x;
+    -ms-transition: $x;
+    -o-transition: $x;
+}
+
+@mixin flexAlignItemsCenter(){
+    display: flex;
+    align-items: center;
+}
+
+@mixin listStyleNone(){
+    list-style: none;
+}
+
+@mixin borderRadius($size){
+    border-radius: $size;
+    -webkit-border-radius: $size;
+    -moz-border-radius: $size;
+    -ms-border-radius: $size;
+    -o-border-radius: $size;
+}
